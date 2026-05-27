@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.TextField()),
-                ('pub_date', models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')),
+                ('pub_date', models.DateTimeField(auto_now_add=True)),
                 ('image', models.ImageField(blank=True, null=True, upload_to='posts/')),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts', to=settings.AUTH_USER_MODEL)),
             ],
@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.TextField()),
-                ('created', models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Дата добавления')),
+                ('created', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to=settings.AUTH_USER_MODEL)),
                 ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='posts.post')),
             ],
