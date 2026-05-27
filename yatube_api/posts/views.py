@@ -1,3 +1,1 @@
-from django.shortcuts import render
-
-# Create your views here.
+# Views for posts are implemented in the API app.
